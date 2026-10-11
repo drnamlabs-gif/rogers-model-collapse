@@ -2,8 +2,10 @@
 
 **Nam H. Le** — Department of Computer Science and Vermont Complex Systems Institute, University of Vermont · [drnamlabs.com](https://drnamlabs.com)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23298661.svg)](https://doi.org/10.5281/zenodo.23298661)
+
 Code, per-seed results, and figures for the paper
-([PDF](paper/Le2026_model_collapse_rogers_paradox.pdf)).
+([PDF](paper/Le2026_model_collapse_rogers_paradox.pdf) · [Zenodo, doi:10.5281/zenodo.23298661](https://doi.org/10.5281/zenodo.23298661)).
 
 Generative models trained on the output of earlier models lose knowledge across
 generations, rare knowledge first. This work reads model collapse as Rogers' paradox
@@ -58,10 +60,13 @@ or the results help your work, please cite the paper; GitHub's **Cite this repos
 button (from `CITATION.cff`) gives the citation in BibTeX and APA.
 
 ```bibtex
-@article{le2026rogers,
+@misc{le2026rogers,
   author = {Le, Nam H.},
   title  = {Who Pays for the Knowledge Models Copy? Model Collapse as Rogers' Paradox},
   year   = {2026},
+  publisher = {Zenodo},
+  doi    = {10.5281/zenodo.23298661},
+  url    = {https://doi.org/10.5281/zenodo.23298661},
   note   = {Preprint}
 }
 ```

@@ -9,6 +9,10 @@ authors:
     website: "https://drnamlabs.com"
 repository-code: "https://github.com/drnamlabs-gif/rogers-model-collapse"
 license: MIT
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23298661"
+    description: "Zenodo preprint of the paper"
 date-released: 2026-10-11
 keywords:
   - model collapse
@@ -18,11 +22,15 @@ keywords:
   - cultural evolution
   - language models
 preferred-citation:
-  type: article
+  type: generic
   title: "Who Pays for the Knowledge Models Copy? Model Collapse as Rogers' Paradox"
   authors:
     - family-names: Le
       given-names: Nam H.
       affiliation: "Department of Computer Science and Vermont Complex Systems Institute, University of Vermont"
   year: 2026
+  publisher:
+    name: Zenodo
+  doi: "10.5281/zenodo.23298661"
+  url: "https://doi.org/10.5281/zenodo.23298661"
   notes: "Preprint"
