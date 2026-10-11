@@ -32,7 +32,9 @@ copies go stale unless someone keeps learning for themselves. It shows that
 | `experiments/collapse_drift2.py` | recursive training in a world that keeps changing (Sec. 5) |
 | `experiments/neural_collapse.py` | character-level transformer replication (Sec. 4) |
 | `experiments/opt_collapse.py` | pretrained OPT-125m fine-tuned on its own output, wikitext-2, Shumailov et al. setting (Sec. 4) |
-| `experiments/results_*.json`, `experiments/neural/`, `experiments/opt/` | per-seed results used in the paper |
+| `experiments/opt_drift.py`, `opt_drift_analysis.py` | OPT-125m in a world that keeps changing (Sec. 5) |
+| `experiments/chain_fit.py` | one- vs two-class Rogers' chain fitted to all-synthetic training, all models (Appendix B) |
+| `experiments/results_*.json`, `experiments/neural/`, `experiments/opt/`, `experiments/opt_drift/` | per-seed results used in the paper |
 | `experiments/data/` | Darwin's *Origin of Species* and Melville's *Moby-Dick* (Project Gutenberg, public domain) |
 | `paper/figures/fig*.py` | scripts that draw every figure from the results above; `figeco.py` also runs the human–AI ecosystem simulation (Sec. 6) |
 
@@ -46,6 +48,8 @@ python collapse_filters.py origin        # and: moby
 python collapse_drift2.py
 python neural_collapse.py replace 0      # one condition and seed per call; see neural_jobs.txt
 python opt_collapse.py replace 0       # or: python opt_collapse.py all  (runs opt_jobs.txt)
+python opt_drift.py all                # runs opt_drift_jobs.txt; then: python opt_drift_analysis.py
+python chain_fit.py
 cd ../paper/figures
 python figexp.py && python figdrift.py && python figeco.py && python figneural.py && python figopt.py
 ```

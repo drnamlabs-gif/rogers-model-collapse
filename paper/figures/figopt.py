@@ -58,8 +58,9 @@ def two(p, rho):
     return p[0] * chain(p[1], rho, G) + (1 - p[0]) * chain(p[2], rho, G)
 
 
-p2 = minimize(lambda p: np.sum((two(p, 1.0) - rel["replace"].mean(0)) ** 2), [0.3, 0.8, 0.03],
-              bounds=[(0, 1)] * 3).x
+y = rel["replace"].mean(0)
+p2 = minimize(lambda p: np.sum((np.log(two(p, 1.0)[1:]) - np.log(y[1:])) ** 2), [0.3, 0.8, 0.03],
+              bounds=[(0, 0.999)] * 3).x  # least squares on log coverage, as in chain_fit.py
 
 fig, axes = plt.subplots(1, 3, figsize=(10.5, 3.3))
 summ = {"u_one_class": float(u), "w_u1_u2": p2.tolist()}
