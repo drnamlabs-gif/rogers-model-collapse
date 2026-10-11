@@ -31,21 +31,23 @@ copies go stale unless someone keeps learning for themselves. It shows that
 | `experiments/collapse_filters.py` | word-trigram lineages, fresh-data mixtures and filters (Sec. 4, 7) |
 | `experiments/collapse_drift2.py` | recursive training in a world that keeps changing (Sec. 5) |
 | `experiments/neural_collapse.py` | character-level transformer replication (Sec. 4) |
-| `experiments/results_*.json`, `experiments/neural/` | per-seed results used in the paper |
+| `experiments/opt_collapse.py` | pretrained OPT-125m fine-tuned on its own output, wikitext-2, Shumailov et al. setting (Sec. 4) |
+| `experiments/results_*.json`, `experiments/neural/`, `experiments/opt/` | per-seed results used in the paper |
 | `experiments/data/` | Darwin's *Origin of Species* and Melville's *Moby-Dick* (Project Gutenberg, public domain) |
 | `paper/figures/fig*.py` | scripts that draw every figure from the results above; `figeco.py` also runs the human–AI ecosystem simulation (Sec. 6) |
 
 ## Reproducing
 
-Python 3.10+ with `numpy`, `scipy`, `matplotlib`, and (for the transformer only) `torch`.
+Python 3.10+ with `numpy`, `scipy`, `matplotlib`, and (for the transformers only) `torch`; the OPT-125m run also needs `transformers` and `datasets` and a GPU (about 3–4 min per lineage on one RTX 5090).
 
 ```bash
 cd experiments
 python collapse_filters.py origin        # and: moby
 python collapse_drift2.py
 python neural_collapse.py replace 0      # one condition and seed per call; see neural_jobs.txt
+python opt_collapse.py replace 0       # or: python opt_collapse.py all  (runs opt_jobs.txt)
 cd ../paper/figures
-python figexp.py && python figdrift.py && python figeco.py && python figneural.py
+python figexp.py && python figdrift.py && python figeco.py && python figneural.py && python figopt.py
 ```
 
 The JSON files already in the repository reproduce every number and figure in the
